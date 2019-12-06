@@ -16,7 +16,7 @@ jobs:
           # service_account_email: ${{ secrets.GCP_SA_EMAIL }}
           service_account_key: ${{ secrets.GCP_SA_KEY }}
       - run: |
-          gcloud config set project ${{ secrets.GCP_PROJECT_ID }}
-          gcloud functions deploy serverless-example \
+          gcloud functions deploy ${{ secrets.GCP_FUNCTION_NAME }} \
+            --project ${{ secrets.GCP_PROJECT_ID }} \
             --runtime nodejs8 \
             --entry-point run
