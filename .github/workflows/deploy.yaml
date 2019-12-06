@@ -17,6 +17,5 @@ jobs:
           service_account_key: ${{ secrets.GCP_SA_KEY }}
       - run: |
           gcloud functions deploy ${{ secrets.GCP_FUNCTION_NAME }} \
-            --project ${{ secrets.GCP_PROJECT_ID }} \
             --runtime nodejs8 \
             --entry-point run
